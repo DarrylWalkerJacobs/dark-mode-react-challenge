@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { Helmet } from 'react-helmet';
 
 import '../styles/_app.scss';
@@ -8,11 +8,14 @@ import '../styles/_app.scss';
 function App() {
   const title = 'Dark Mode Challenge';
 
+  const [darkMode, setDarkMode] = useState(false);
+
   return (
     <Fragment>
       <Helmet
         htmlAttributes={{
-          lang: 'en'
+          lang: 'en',
+          class: darkMode && 'dark-mode'
         }}
         title={title}
       />
@@ -23,8 +26,14 @@ function App() {
           </div>
 
           {/* --The button that should toggle dark mode-- */}
-          <button className="app__dark-mode-btn icon level-right">
-            <FontAwesomeIcon icon={faMoon} />
+          <button
+            className="app__dark-mode-btn icon level-right"
+            onClick={() => setDarkMode(!darkMode)}
+          >
+            <FontAwesomeIcon
+              color={darkMode ? '#FFA500' : ''}
+              icon={darkMode ? faSun : faMoon}
+            />
           </button>
         </div>
 
