@@ -17,7 +17,7 @@ const driver = new webdriver.Builder()
   .build();
 
 it('returns the localhost app title', async () => {
-  const page = await driver.get(serverUri);
+  await driver.get(serverUri);
 
   const title = await driver.getTitle();
 
