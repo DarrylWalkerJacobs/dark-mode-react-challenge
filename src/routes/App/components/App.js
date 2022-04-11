@@ -29,7 +29,8 @@ function App() {
           <button
             className="app__dark-mode-btn icon level-right"
             onClick={() => setDarkMode(!darkMode)}
-          >
+            title={darkMode ? "Set light mode" : "Set dark mode"}
+            >
             <FontAwesomeIcon
               color={darkMode ? '#FFA500' : ''}
               icon={darkMode ? faSun : faMoon}

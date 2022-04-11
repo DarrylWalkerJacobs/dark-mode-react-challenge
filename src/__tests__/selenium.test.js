@@ -1,4 +1,5 @@
 import webdriver from 'selenium-webdriver';
+import { By } from 'selenium-webdriver';
 import ChromeSelenium from 'selenium-webdriver/chrome';
 import 'chromedriver';
 
@@ -22,6 +23,22 @@ it('returns the localhost app title', async () => {
   const title = await driver.getTitle();
 
   expect(title).toBe(appTitle);
+});
+
+
+it('changes the icon alt text when clicked', async () => {
+  await driver.get(serverUri);
+
+  const darkModeButton = await driver.findElement(By.className('app__dark-mode-btn'));
+
+  const buttonTitlePre = await darkModeButton.getAttribute("title");
+  expect(buttonTitlePre).toBe("Set dark mode");
+
+  darkModeButton.click();
+
+  const iconTitlePost = await darkModeButton.getAttribute("title");
+  expect(iconTitlePost).toBe("Set light mode");
+
 });
 
 afterAll(() => {
