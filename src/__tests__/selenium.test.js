@@ -23,3 +23,7 @@ it('returns the localhost app title', async () => {
 
   expect(title).toBe(appTitle);
 });
+
+afterAll(() => {
+  return driver.quit();
+});
