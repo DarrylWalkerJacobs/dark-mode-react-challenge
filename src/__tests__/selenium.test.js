@@ -31,12 +31,12 @@ it('changes the icon alt text when clicked', async () => {
 
   //
 
-  const buttonTitlePre = //
+  const buttonTitlePre = await driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[1]/button/@title[text(),'Set dark mode'"));
   expect(buttonTitlePre).toBe("Set dark mode");
 
   //
 
-  const iconTitlePost = //
+  const iconTitlePost = await driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[1]/button/@title[text(),'Setlight mode'"));
   expect(iconTitlePost).toBe("Set light mode");
 
 });
