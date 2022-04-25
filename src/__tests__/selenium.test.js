@@ -25,28 +25,27 @@ it('returns the localhost app title', async () => {
   expect(title).toBe(appTitle);
 });
 
-
-it('changes the icon alt text when clicked v1', async () => {
-  await driver.get(serverUri);
-
-  //  //*[@id="dark-mode-btn"]
-
-  await driver.findElement(By.xpath("//*[@id='root']/div/div[1]/button[contains(@title ,'Set dark mode')]")).click();
-  await driver.findElement(By.xpath("//*[@id='root']/div/div[1]/button[contains(@title ,'Set light mode')]"));
-
-});
-
 it('changes the icon alt text when clicked ', async () => {
   await driver.get(serverUri);
 
-  const darkModeButton = await driver.findElement(By.classNane('app__dark-mode-btn'));
+  //const darkModeButton = await
+ driver.findElement().By.Xpath["//button[@class='app__dark-mode-btn icon level-right']"].click();
+ String text = driver.findElement(By.Xpath("//button[@class="app__dark-mode-btn icon level-right"]")).getText();
+Assert.assetEquals(text,"Set Light Mode")
 
-  const buttonTitlePre = await darkModeButton.getAttribute("title");
+ driver.findElement().By.Xpath["//button[@class='app__dark-mode-btn icon level-right']"].click();
+ String text = driver.findElement(By.Xpath("//button[@class="app__dark-mode-btn icon level-right"]")).getText();
+Assert.assetEquals(text,"Set Light Mode")
+
+
+  
+
+  //const buttonTitlePre = await ...
   expect(buttonTitlePre).toBe("Set dark mode");
 
-  darkModeButton.click();
+  // ...
 
-  const iconTitlePost = await darkModeButton.getAttribute("title");
+  // const iconTitlePost = await ...
   expect(iconTitlePost).toBe("Set light mode");
 
 });
