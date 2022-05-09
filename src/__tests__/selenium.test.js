@@ -17,7 +17,7 @@ const driver = new webdriver.Builder()
   .setChromeOptions(options)
   .build();
 
-it('returns the localhost app title', async () => {
+it('has the correct application title', async () => {
   await driver.get(serverUri);
 
   const title = await driver.getTitle();
@@ -25,27 +25,18 @@ it('returns the localhost app title', async () => {
   expect(title).toBe(appTitle);
 });
 
-it('changes the icon alt text when clicked ', async () => {
+it('changes the dark mode icon tooltip text when clicked ', async () => {
   await driver.get(serverUri);
+     
+  //
 
-   
-  // 
+  const buttonTitlePre = await //
+  expect(buttonTitlePre).toBe("Set dark mode");
 
-const buttonTitlePre = await //;
-expect(buttonTitlePre).toBe("Set dark mode");
-
-
-const txtOfMode = driver.findElement(By.xpath("").getTitle());
-if(txtOfMode.equals("set dark mode"))
-{
- driver.findElement(By.xpath("")).click;
-}
-//
+  //
   
-const iconTitlePost = await //;
-expect(iconTitlePost).toBe("Set light mode");
-
-
+  const iconTitlePost = await //
+  expect(iconTitlePost).toBe("Set light mode");
 
 });
 
