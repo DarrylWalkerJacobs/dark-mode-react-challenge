@@ -28,19 +28,15 @@ it('has the correct application title', async () => {
 it('changes the dark mode icon tooltip text when clicked ', async () => {
   await driver.get(serverUri);
      
-  //
+  const button = await driver.findElement(By.className("app__dark-mode-btn"));
 
-  const buttonTitlePre = await //
+  const buttonTitlePre = await button.getAttribute("title");
   expect(buttonTitlePre).toBe("Set dark mode");
 
-  webelement element = findelement(By.className="//button[@class='app__dark-mode-btn icon level-right']");
-  element.click();
-  driver.quit();
-  //
-  driver.getTitle.element
-  const iconTitlePost = ""
+  await button.click();
+  
+  const iconTitlePost = await button.getAttribute("title");
   expect(iconTitlePost).toBe("Set light mode");
-
 
 });
 
