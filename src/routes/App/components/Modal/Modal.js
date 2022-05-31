@@ -6,7 +6,8 @@ const Modal = ({ children, isOpen, setIsOpen }) => {
       className={clsx({
           modal: true,
           fade: true,
-          show: isOpen
+          show: isOpen,
+          'm-0': true
       })}
       id="modalId"
       tabindex="-1"
