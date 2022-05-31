@@ -1,12 +1,9 @@
-.app {
-  padding: 10%;
-  max-width: 1000px;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  box-sizing: content-box;
+body {
+  background-color: transparent;
+  color: inherit;
+}
 
+.app {
   &__dark-mode-btn {
     border: 0;
     background: transparent;
@@ -21,10 +18,5 @@
     &:focus {
       outline: none;
     }
-  }
-
-  .buttons > .button {
-    height: 30px;
-    width: 100px;
   }
 }

@@ -6,30 +6,31 @@ import { Helmet } from 'react-helmet';
 import '../styles/_app.scss';
 
 function App() {
-  const title = 'Dark Mode Challenge';
+  const title = 'The Amazing Dark Mode Bootstrap React Challenge';
 
   return (
     <Fragment>
       <Helmet
         htmlAttributes={{
-          lang: 'en'
+          lang: 'en',
+          class: 'bg-light text-dark'
         }}
         title={title}
       />
-      <div className="app">
-        <div className="level">
-          <div>
-            <h1 className="title">{title}</h1>
-          </div>
+      <div className="app container py-3">
+        <div className="row">
+          <div className="col-12 d-flex justify-content-between align-items-center mb-2">
+            <h1 className="title m-0">{title}</h1>
 
-          {/* --The button that should toggle dark mode-- */}
-          <button className="app__dark-mode-btn icon level-right">
-            <FontAwesomeIcon icon={faMoon} />
-          </button>
+            {/* --The button that should toggle dark mode-- */}
+            <button className="app__dark-mode-btn icon">
+              <FontAwesomeIcon icon={faMoon} />
+            </button>
+          </div>
         </div>
 
-        <div className="columns">
-          <div className="column">
+        <div className="row">
+          <div>
             <p>
               Lollipop powder powder. Cotton candy caramels chupa chups halvah
               muffin caramels apple pie topping cake. Topping chocolate bar
@@ -39,7 +40,7 @@ function App() {
               Croissant tiramisu chocolate bar carrot cake lemon drops halvah.
             </p>
           </div>
-          <div className="column">
+          <div>
             <p>
               Marshmallow tiramisu liquorice bear claw chocolate bar bear claw
               tart. Muffin chupa chups pie. Brownie apple pie topping lemon
@@ -50,28 +51,22 @@ function App() {
           </div>
         </div>
 
-        <div className="field">
-          <div className="control">
-            <input className="input" type="text" placeholder="Name" />
+        <div className="row g-3 mb-2">
+          <div className="col-auto">
+            <input type="text" placeholder="Name" aria-label="Name" />
+          </div>
+          <div className="col-auto">
+            <select aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div className="col-12">
+            <button>Submit</button>
           </div>
         </div>
-
-        <div className="field">
-          <div className="control">
-            <input className="input" type="text" placeholder="Email" />
-          </div>
-        </div>
-
-        <section className="section">
-          <div className="buttons level-right">
-            <a href="#save" className="button is-primary">
-              Save
-            </a>
-            <a href="#submit" className="button is-link">
-              Submit
-            </a>
-          </div>
-        </section>
       </div>
     </Fragment>
   );

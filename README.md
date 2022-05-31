@@ -14,10 +14,15 @@ Gratefully borrowed from [react-coding-challenges](https://github.com/alexgurr/r
 &nbsp;
 # Requirements 📖
 - Add dark-mode switching functionality to the *existing* dark-mode button
-  - Utilise the *existing* dark-mode scss file by adding a `dark-mode` class to the root `html` element
+  - Utilise the *existing* dark-mode scss file by adding `bg-dark` and `text-light` classes to the root `html` element
 - When in Dark mode:
   - The button icon should be `faSun`
   - The button icon colour should be `(#FFA500)`. You can use the `color` prop on the `Icon` component.
+- Add column classes to the two paragraphs to get them to sit side by side
+- Add bootstrap classes to the button and form fields to style them appropriately
+- Add functionality to store the contents of the form fields and display them in a modal
+  - Use the existing modal component
+  - Modal should show/hide based on state
 
 &nbsp;
 # Think about 💡
