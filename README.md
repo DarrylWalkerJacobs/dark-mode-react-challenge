@@ -35,8 +35,3 @@ Gratefully borrowed from [react-coding-challenges](https://github.com/alexgurr/r
 - Basic app UI (mobile responsive)
 - Dark mode and light mode styles/themes
 
-&nbsp;
-# Screenshots 🌄
-&nbsp;
-![screenshot-light](https://puu.sh/Fq13d/04a9e5ad48.png)
-![screenshot-dark](https://puu.sh/Ilwao/795ef304a2.png)
