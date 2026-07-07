@@ -34,7 +34,6 @@ function App() {
             </div>
 
             <div>
-              {/* --The button that should toggle dark mode-- */}
               <button
                 type="button"
                 aria-label="Toggle dark mode"
