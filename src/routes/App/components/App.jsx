@@ -1,19 +1,64 @@
-import { faMoon } from '@fortawesome/free-solid-svg-icons';
+import clsx from 'clsx';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Helmet } from 'react-helmet';
 
+import Modal from './Modal/Modal';
 import '../styles/app.css';
+
+const optionLabels = {
+  '1': 'One',
+  '2': 'Two',
+  '3': 'Three'
+};
 
 function App() {
   const title = 'The Amazing Dark Mode Tailwind React Challenge';
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [name, setName] = useState('');
+  const [selection, setSelection] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [submittedValues, setSubmittedValues] = useState({
+    name: '',
+    selection: ''
+  });
+
+  const htmlClassName = clsx(
+    isDarkMode ? 'bg-slate-950 text-slate-100' : 'bg-white text-slate-900'
+  );
+  const fieldClassName = clsx(
+    'w-full rounded-md border px-4 py-2.5 shadow-sm transition focus:outline-none focus:ring-4',
+    isDarkMode
+      ? 'border-slate-600 bg-slate-900 text-slate-100 placeholder:text-slate-400 focus:border-sky-400 focus:ring-sky-950'
+      : 'border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-sky-500 focus:ring-sky-100'
+  );
+  const submitButtonClassName = clsx(
+    'inline-flex items-center justify-center rounded-md border px-4 py-2.5 text-sm font-semibold shadow-sm transition focus:outline-none focus:ring-4',
+    isDarkMode
+      ? 'border-sky-400 bg-sky-500 text-slate-950 hover:bg-sky-400 focus:ring-sky-950'
+      : 'border-sky-700 bg-sky-600 text-white hover:bg-sky-700 focus:ring-sky-200'
+  );
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((currentValue) => !currentValue);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSubmittedValues({
+      name: name.trim(),
+      selection
+    });
+    setIsModalOpen(true);
+  };
 
   return (
     <Fragment>
       <Helmet
         htmlAttributes={{
           lang: 'en',
-          class: 'bg-white text-slate-900'
+          class: htmlClassName
         }}
         title={title}
       />
@@ -38,13 +83,17 @@ function App() {
                 type="button"
                 aria-label="Toggle dark mode"
                 className="app__dark-mode-btn icon"
+                onClick={toggleDarkMode}
               >
-                <FontAwesomeIcon icon={faMoon} />
+                <FontAwesomeIcon
+                  icon={isDarkMode ? faSun : faMoon}
+                  color={isDarkMode ? '#FFA500' : undefined}
+                />
               </button>
             </div>
           </div>
 
-          <div className="mb-8 grid gap-4">
+          <div className="mb-8 grid gap-4 md:grid-cols-2">
             <div className="app__panel app__panel--soft rounded-2xl p-5">
               <p className="m-0 leading-7">
                 Lollipop powder powder. Cotton candy caramels chupa chups halvah
@@ -67,21 +116,33 @@ function App() {
             </div>
           </div>
 
-          <div className="app__panel rounded-2xl p-5">
+          <form className="app__panel rounded-2xl p-5" onSubmit={handleSubmit}>
             <div className="mb-4">
               <h2 className="text-lg font-semibold">Example form</h2>
               <p className="app__muted mt-1 text-sm">
-                The inputs and submit button are left ready for the applicant to
-                style with Tailwind utilities.
+                The completed version stores the field values and shows them in
+                the existing modal.
               </p>
             </div>
 
             <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_220px]">
               <div>
-                <input type="text" placeholder="Name" aria-label="Name" />
+                <input
+                  type="text"
+                  placeholder="Name"
+                  aria-label="Name"
+                  value={name}
+                  onChange={(event) => setName(event.target.value)}
+                  className={fieldClassName}
+                />
               </div>
               <div>
-                <select defaultValue="" aria-label="Default select example">
+                <select
+                  value={selection}
+                  aria-label="Default select example"
+                  onChange={(event) => setSelection(event.target.value)}
+                  className={fieldClassName}
+                >
                   <option value="" disabled>
                     Open this select menu
                   </option>
@@ -93,11 +154,33 @@ function App() {
             </div>
 
             <div className="mt-4">
-              <button type="button">Submit</button>
+              <button type="submit" className={submitButtonClassName}>
+                Submit
+              </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
+      <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen}>
+        <dl className="space-y-3">
+          <div>
+            <dt className="text-sm font-semibold uppercase tracking-wide text-sky-600">
+              Name
+            </dt>
+            <dd className="app__muted mt-1 text-base">
+              {submittedValues.name || 'No name provided'}
+            </dd>
+          </div>
+          <div>
+            <dt className="text-sm font-semibold uppercase tracking-wide text-sky-600">
+              Selection
+            </dt>
+            <dd className="app__muted mt-1 text-base">
+              {optionLabels[submittedValues.selection] ?? 'Nothing selected'}
+            </dd>
+          </div>
+        </dl>
+      </Modal>
     </Fragment>
   );
 }
