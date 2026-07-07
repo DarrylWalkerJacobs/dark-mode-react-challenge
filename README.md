@@ -14,6 +14,7 @@ Gratefully borrowed and substantially modified from [react-coding-challenges](ht
 &nbsp;
 # Tooling 🛠️
 - Node 24 (`.nvmrc` is pinned to `v24`)
+- Vite
 - Tailwind CSS
 
 &nbsp;
@@ -36,7 +37,7 @@ or
 - Add responsive Tailwind layout classes to the two paragraphs so they sit side by side on wider screens
 - Add Tailwind utility classes to the button and form fields to style them appropriately
 - Add functionality to store the contents of the form fields and display them in a modal
-  - Use the existing modal component in `src/routes/App/components/Modal/Modal.js`
+  - Use the existing modal component in `src/routes/App/components/Modal/Modal.jsx`
   - Modal should show/hide based on state
 
 &nbsp;
@@ -49,4 +50,4 @@ or
 # What's Already Been Done 🏁
 - Basic app UI (mobile responsive)
 - Dark mode and light mode styles/themes
-- Node 24-ready tooling and Tailwind setup
+- Node 24-ready tooling, Vite, and Tailwind setup
