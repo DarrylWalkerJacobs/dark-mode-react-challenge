@@ -18,12 +18,6 @@ Gratefully borrowed and substantially modified from [react-coding-challenges](ht
 - Tailwind CSS
 
 &nbsp;
-# Getting Started 🚀
-- `nub install`
-- `nub run start`
-
-or
-
 - `npm install`
 - `npm run start`
 
