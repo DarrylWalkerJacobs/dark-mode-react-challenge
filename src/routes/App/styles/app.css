@@ -2,6 +2,26 @@ body {
   min-height: 100vh;
 }
 
+.app__shell {
+  background-color: var(--app-panel-bg);
+  border: 1px solid var(--app-border);
+  box-shadow: var(--app-panel-shadow);
+}
+
+.app__panel {
+  background-color: var(--app-panel-bg);
+  border: 1px solid var(--app-border);
+  box-shadow: 0 10px 25px -20px rgb(15 23 42 / 0.45);
+}
+
+.app__panel--soft {
+  background-color: var(--app-panel-bg-soft);
+}
+
+.app__muted {
+  color: var(--app-text-muted);
+}
+
 .app__dark-mode-btn {
   align-items: center;
   background: linear-gradient(
@@ -38,4 +58,10 @@ body {
 .app__dark-mode-btn:focus-visible {
   outline: 2px solid rgb(148 163 184);
   outline-offset: 4px;
+}
+
+.app__modal-panel {
+  background-color: var(--app-panel-bg);
+  border: 1px solid var(--app-border);
+  color: inherit;
 }

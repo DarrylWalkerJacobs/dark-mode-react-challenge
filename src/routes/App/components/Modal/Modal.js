@@ -13,14 +13,14 @@ const Modal = ({ children, isOpen, setIsOpen }) => {
       aria-modal="true"
       aria-labelledby="modalLabel"
     >
-      <div className="w-full max-w-lg rounded-2xl bg-white text-slate-900 shadow-2xl ring-1 ring-slate-200">
-        <div className="border-b border-slate-200 px-6 py-4">
+      <div className="app__modal-panel w-full max-w-lg rounded-2xl shadow-2xl">
+        <div className="border-b px-6 py-4" style={{ borderColor: 'var(--app-border)' }}>
           <h2 className="text-xl font-semibold" id="modalLabel">
             Form submission
           </h2>
         </div>
         <div className="px-6 py-4">{children}</div>
-        <div className="flex justify-end border-t border-slate-200 px-6 py-4">
+        <div className="flex justify-end border-t px-6 py-4" style={{ borderColor: 'var(--app-border)' }}>
           <button
             type="button"
             className="rounded-md bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
