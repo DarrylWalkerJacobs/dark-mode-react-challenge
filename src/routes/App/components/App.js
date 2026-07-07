@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 
 import '../styles/app.css';
@@ -62,9 +62,8 @@ function App() {
                 Marshmallow tiramisu liquorice bear claw chocolate bar bear claw
                 tart. Muffin chupa chups pie. Brownie apple pie topping lemon
                 drops marzipan toffee. Pudding macaroon icing ice cream bonbon
-                cake tart. Pudding sugar plum chocolate cake cake biscuit
-                pastry pastry chocolate bar tart. Lemon drops dessert gummies
-                icing.
+                cake tart. Pudding sugar plum chocolate cake cake biscuit pastry
+                pastry chocolate bar tart. Lemon drops dessert gummies icing.
               </p>
             </div>
           </div>
@@ -74,19 +73,11 @@ function App() {
               <h2 className="text-lg font-semibold text-slate-900">
                 Example form
               </h2>
-              <p className="mt-1 text-sm text-slate-600">
-                The controls are intentionally presentational so the challenge
-                can focus on wiring up the existing behavior.
-              </p>
             </div>
 
             <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_220px]">
               <div>
-                <input
-                  type="text"
-                  placeholder="Name"
-                  aria-label="Name"
-                />
+                <input type="text" placeholder="Name" aria-label="Name" />
               </div>
               <div>
                 <select defaultValue="" aria-label="Default select example">
