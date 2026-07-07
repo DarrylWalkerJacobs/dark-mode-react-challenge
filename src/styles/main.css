@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top, rgb(224 242 254) 0%, transparent 35%),
+    linear-gradient(180deg, rgb(248 250 252) 0%, rgb(241 245 249) 100%);
+  color: inherit;
+  font-family: 'Nunito', sans-serif;
+}
