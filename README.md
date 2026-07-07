@@ -18,6 +18,7 @@ Gratefully borrowed and substantially modified from [react-coding-challenges](ht
 - Tailwind CSS
 
 &nbsp;
+# Getting Started
 - `npm install`
 - `npm run start`
 
@@ -37,7 +38,7 @@ Gratefully borrowed and substantially modified from [react-coding-challenges](ht
 &nbsp;
 # Think about 💡
 - How we would use Dark mode on other potential routes/components in a bigger application. Would your solution work for this?
-- How we can apply a class to the `html` DOM element
+- How could the application be more DRY?
 
 
 &nbsp;
